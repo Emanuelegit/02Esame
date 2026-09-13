@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es CSS n°8</title>
+    <style>
+        h1 {
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 6px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: fit-content;
+    padding: 5px;
+    
+}
+
+p {
+    text-align: center;
+    background-color: gray;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 4px solid;
+    width: fit-content;
+}
+
+div.contenitore {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.elenco {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+li {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: 2px solid yellow;
+    border-radius: 10px;
+    gap: 15px;
+    width: fit-content;
+}
+
+a:visited {
+    
+    color: red;
+    
+}
+
+a:hover {
+    background-color: red;
+
+}
+    </style>
+</head>
+<body>
+    <div class="contenitore" >
+        <h1>Grazie per per aver inserito i tuoi dati</h1>
+        <p>Mettiti in contatto con la sede per completare il tutto :</p>
+    </div>
+        <ol class="elenco">
+            <li>+39 1234567890</li>
+            <li>experienceshop@gmail.com</li>
+            <li>Insatgram : <a href="expshop_19">expshop_19</a></li> 
+        </ol>
+</body>
+</html>

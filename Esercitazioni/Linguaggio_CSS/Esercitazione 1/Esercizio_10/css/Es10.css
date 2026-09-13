@@ -1,0 +1,30 @@
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: aqua;
+    border: 5px solid rgb(107, 107, 233);
+    border-radius: 2px;
+    width: fit-content;
+}
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+
+del {
+    color: red;
+    font-weight: bold;
+}
+
+
+s {
+    color: gray;
+    font-style: italic;
+}
+
+li {
+    text-align: center;
+    border: 5px solid red;
+    width: fit-content;
+}

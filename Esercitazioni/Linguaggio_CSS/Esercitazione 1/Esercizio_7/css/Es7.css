@@ -1,0 +1,21 @@
+body.contenitore {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 10px solid blue;
+    text-align: center;
+    width: fit-content;
+    margin-right: 10px;
+}
+
+p {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: aqua;
+    width: fit-content;
+    border: 6px solid black;
+}
+

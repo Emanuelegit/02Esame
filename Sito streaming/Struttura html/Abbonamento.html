@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BISTREAM - Abbonamento</title>
+</head>
+<body>
+    <header>
+        <img src="../Img/Logo sito streaming.png" alt="Logo_Bistream" width="120">
+        <h1>BISTREAM</h1>
+        <nav>
+            <ul>
+                <li><a href="./Homepage.html">Homepage</a></li>
+                <li><a href="./Serietv.html">Serietv</a></li>
+                <li><a href="./Film.html">Film</a></li>
+                <li><a href="./Account.html">Account</a></li>
+                <li><a href="./Coda.html">Coda</a></li>
+                <li><a href="./Abbonamento.html">Abbonamento</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section>
+            <h2>Bronze</h2>
+            <form action="./Pagamento.html" method="get">
+                <ol>
+                    <li>Qualità video : 720p</li>
+                    <li>Schermi in contemporanea : 1</li>
+                    <li>Pubblicità : Si, all’inizio</li>
+                    <li>Download : No</li>
+                    <li>Account : 2</li>
+                </ol>
+
+                <label for="scelta-bronze">Seleziona piano:</label>
+                <select name="piano" id="scelta-bronze">
+                    <option value="mensile">Mensile : 8.00€</option>
+                    <option value="annuale">Annuale : 5.00€ / mese</option>
+                </select>
+                <br><br>
+
+                <input type="submit" name="Acquista" value="Acquista">
+            </form>
+        </section>
+        
+        
+        <section>        
+            <h2>Silver</h2>
+            <form action="./Pagamento.html" method="get">
+                <ol>
+                    <li>Qualità video : Full HD 1080p </li>
+                    <li>Schermi in contemporanea : 3</li>
+                    <li>Pubblicità : No</li>
+                    <li>Download : Fino a 20 titoli totali</li>
+                    <li>Account : 3</li>
+                </ol>
+
+                <label for="scelta-silver">Seleziona piano:</label>
+                <select name="piano" id="scelta-silver">
+                    <option value="mensile">Mensile : 12.00€</option>
+                    <option value="annuale">Annuale : 10.00€ / mese</option>
+                </select>
+                <br><br>
+
+                <input type="submit" name="Acquista" value="Acquista">
+            </form>
+        </section>
+        
+        
+        <section>
+            <h2>Gold</h2>
+            <form action="./Pagamento.html" method="get">
+                <ol>
+                    <li>Qualità video : 4k ultra HD </li>
+                    <li>Schermi in contemporanea : 5</li>
+                    <li>Pubblicità : No</li>
+                    <li>Download : Si, illimitati</li>
+                    <li>Account : 5</li>
+                    <li>Novità : accesso completo a scene tagliate (qualora disponibili)</li>
+                </ol>
+
+                <label for="scelta-gold">Seleziona piano:</label>
+                <select name="piano" id="scelta-gold">
+                    <option value="mensile">Mensile : 20.00€</option>
+                    <option value="annuale">Annuale : 14.00€ / mese</option>
+                </select>
+                <br><br>
+
+                <input type="submit" name="Acquista" value="Acquista">
+            </form>
+        </section>
+
+        
+        <section>
+            <h2>Note utili</h2>
+            <p>Si ricorda che l'abbonamento annuale costituisce un vincolo, perciò in caso di disdetta l'addebito continuerà fino a fine annualità</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Emanuele Ippoliti - tutti i diritti riservati</p>
+    </footer>
+     
+</body>
+</html>

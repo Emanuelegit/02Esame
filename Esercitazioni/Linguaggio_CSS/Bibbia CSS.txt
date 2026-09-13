@@ -1,0 +1,211 @@
+======================================================================
+                         BIBBIA CSS ESSENZIALE
+======================================================================
+
+----------------------------------------------------------------------
+1. IL RESET (Da mettere SEMPRE all'inizio del file)
+----------------------------------------------------------------------
+* {
+    box-sizing: border-box; /* Risolve problemi di calcolo dimensioni */
+    margin: 0;
+    padding: 0;
+}
+
+----------------------------------------------------------------------
+2. ORDINE LOGICO DEGLI ATTRIBUTI DENTRO UN SELETTORE
+----------------------------------------------------------------------
+.selettore {
+    /* 1. POSIZIONE E LAYOUT (Dove sta la scatola?) */
+    /* 2. DIMENSIONI E BOX MODEL (Quanto è grande la scatola?) */
+    /* 3. SFONDO E BORDI (Che aspetto ha la scatola?) */
+    /* 4. TIPOGRAFIA (Come appare il testo dentro la scatola?) */
+    /* 5. EFFETTI E TRASFORMAZIONI (Cosa fa se interagisco?) */
+}
+
+----------------------------------------------------------------------
+3. LA BIBBIA DELLE PROPRIETÀ
+----------------------------------------------------------------------
+
+[1] POSIZIONE E LAYOUT
+* Fondamentali:
+  - display: block / inline / inline-block / flex / grid / none
+  - position: static / relative / absolute / fixed / sticky
+  - top / bottom / left / right: px / % / rem
+  - z-index: numero intero (livelli di sovrapposizione)
+
+* Per Layout Flessibili (display: flex):
+  - flex-direction: row / column
+  - justify-content: flex-start / center / flex-end / space-between / space-around
+  - align-items: stretch / center / flex-start / flex-end
+  - gap: px / rem (spazio uniforme tra gli elementi figli)
+
+* Per divertirsi:
+  - place-items: center (con display: grid, centra in orizzontale e verticale)
+  - float: left / right
+  - clear: both
+
+
+[2] DIMENSIONI E BOX MODEL
+* Fondamentali:
+  - width: px / % / vw / auto
+  - height: px / % / vh / auto
+  - margin: top right bottom left (es. "10px auto" per centrare)
+  - padding: top right bottom left
+
+* Controllo Limiti:
+  - max-width / min-width: px / %
+  - max-height / min-height: px / %
+
+* Per divertirsi:
+  - width: fit-content; (stringe la scatola esattamente attorno al contenuto)
+  - aspect-ratio: 1/1 (quadrato) / 16/9 (formato video)
+  - overflow: visible / hidden / scroll / auto
+
+
+[3] SFONDO E BORDI
+* Fondamentali:
+  - background-color: nome / #esadecimale / rgb() / transparent
+  - border: spessore stile colore (es. "2px solid #000")
+  - border-radius: px / %
+
+* Tipi di Bordo (border-style):
+  - solid / dashed / dotted / double / groove / ridge / inset / outset
+
+* Sfondi avanzati:
+  - background-image: url('percorso/immagine.jpg')
+  - background-size: cover / contain
+  - background-position: center / top / bottom
+
+* Per divertirsi:
+  - background: linear-gradient(angolo, colore1, colore2);
+  - box-shadow: spostamento-x spostamento-y sfumatura colore
+  - outline: spessore stile colore (bordo che non occupa spazio nel Box Model)
+
+
+[4] TIPOGRAFIA ED ELEMENTI INTERNI
+* Fondamentali:
+  - color: nome / #esadecimale / rgb()
+  - font-family: nome-font, genere-generico (es. "Arial, sans-serif")
+  - font-size: px / rem / %
+  - font-weight: normal / bold / 100-900
+  - text-align: left / center / right / justify
+  - line-height: numero / px (spaziatura tra le righe di testo)
+
+* Formattazione Testo:
+  - text-decoration: none / underline / line-through
+  - text-transform: uppercase / lowercase / capitalize
+  - letter-spacing: px
+
+* Per divertirsi:
+  - text-shadow: spostamento-x spostamento-y sfumatura colore
+  - font-style: italic / normal
+  - list-style-type: none / disc / decimal (per liste <ul> e <ol>)
+
+
+[5] EFFETTI, TRASFORMAZIONI E INTERAZIONI
+* Fondamentali:
+  - opacity: da 0 (invisibile) a 1 (visibile)
+  - cursor: pointer / default / not-allowed / move
+
+* Per divertirsi:
+  - transition: proprietà tempo tipo-curva (es. "all 0.3s ease")
+  - transform: translate(x, y) / scale(moltiplicatore) / rotate(gradi)
+  - filter: blur(px) / grayscale(%) / brightness(%)
+  - user-select: none (impedisce la selezione del testo)
+
+----------------------------------------------------------------------
+4. SELETTORI E STATI UTILI
+----------------------------------------------------------------------
+* .classe:hover (quando il mouse passa sopra)
+* .classe:active (mentre il mouse sta cliccando)
+* .classe:focus (quando l'elemento viene selezionato, es. input)
+* .classe::before / .classe::after (contenuti decorativi via content: "";)
+
+----------------------------------------------------------------------
+5. CAPITOLO FLEXBOX (LAYOUT FLESSIBILE)
+----------------------------------------------------------------------
+Regola d'oro:
+1. Applichi 'display: flex' sul PADRE (il contenitore).
+2. Le proprietà di allineamento agiscono sui FIGLI DIRETTI.
+
+PROPRIETÀ DEL PADRE (Contenitore Flex):
+
+* Attivazione:
+  - display: flex / inline-flex
+
+* Direzione e Scorrimento (flex-direction / flex-wrap):
+  - flex-direction: row (default) / row-reverse / column / column-reverse
+  - flex-wrap: nowrap (default) / wrap / wrap-reverse
+  - gap: px / rem (spazio uniforme tra gli elementi figli)
+
+* Allineamento Asse Principale (justify-content):
+  - flex-start (default) / flex-end / center / space-between / space-around / space-evenly
+
+* Allineamento Asse Trasversale (align-items):
+  - stretch (default) / flex-start / flex-end / center / baseline
+
+* Per divertirsi (Righe multiple):
+  - flex-flow: combinazione rapida (es. "flex-flow: row wrap;")
+  - align-content: flex-start / center / space-between (richiede flex-wrap: wrap)
+
+
+PROPRIETÀ DEI FIGLI (Elementi dentro il Flex):
+
+* Dimensionamento Flessibile (flex-grow / flex-shrink / flex-basis):
+  - flex-grow: numero (es. 1 = assorbe lo spazio avanzato. 0 = non cresce, default)
+  - flex-shrink: numero (es. 1 = può rimpicciolirsi. 0 = vieta di rimpicciolirsi)
+  - flex-basis: px / % / auto (dimensione iniziale dell'elemento)
+
+* Allineamento Singolo (align-self):
+  - align-self: auto / flex-start / flex-end / center / stretch / baseline
+
+* Per divertirsi:
+  - flex: forma abbreviata grow shrink basis (es. "flex: 1 0 200px;" o "flex: 1;")
+  - order: numero intero (es. "-1" sposta l'elemento per primo visivamente)
+
+======================================================
+   EFFETTI HOVER PER LE IMMAGINI (:hover)
+======================================================
+
+/* 1. EFFETTO ZOOM (Ingrandimento fluido) */
+.img-zoom {
+    transition: transform 0.3s ease;
+}
+.img-zoom:hover {
+    transform: scale(1.08);
+}
+
+/* 2. DA BIANCO E NERO A COLORI */
+.img-desaturate {
+    filter: grayscale(100%);
+    transition: filter 0.4s ease;
+}
+.img-desaturate:hover {
+    filter: grayscale(0%);
+}
+
+/* 3. SOLLEVAMENTO CON OMBRA / BAGLIORE */
+.img-glow {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.img-glow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 4. INCLINAZIONE 3D (Rotazione scheda) */
+.img-rotate {
+    transition: transform 0.4s ease;
+}
+.img-rotate:hover {
+    transform: rotate(3deg) scale(1.05);
+}
+
+/* 5. DA SFOCATO A NITIDO */
+.img-focus {
+    filter: blur(3px) opacity(0.7);
+    transition: filter 0.3s ease;
+}
+.img-focus:hover {
+    filter: blur(0px) opacity(1);
+}

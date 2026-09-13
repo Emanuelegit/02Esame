@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio CSS n° 20</title>
+    <style>
+
+        body {
+            background-color: rgb(80, 41, 41);
+        }
+        section {
+            display: flex;
+            justify-content: center;
+            border: 3px solid rgb(68, 17, 17);
+            border-radius: 5px;
+            width: 400px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        div.titolo {
+            display: flex;
+            justify-content: center;
+        }
+        input[type=email], input[type=password] {
+            border: solid black 5px;
+            background-color: rgb(133, 133, 170);
+        }
+        input[type=submit], input[type=reset] {
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        input[type=email]:focus {
+            background-color: aqua;
+        }
+        input[type=password]:focus {
+            background-color: aqua;
+        }
+        div.altro {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        a {
+            text-decoration: none;
+            color: purple;
+        }
+        a:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+        <div class="titolo">
+                <h1>ACCEDI QUI</h1>
+        </div>
+        <section> 
+            
+            <form action="./Pagina login.html" method="get">
+                
+                    <label>email <br><input type="email" name="email"  required><br><br></label>
+                    <label>password <br><input type="password" name="password" required><br><br></label>
+                    <label><input type="checkbox" required>Ricordarmi su questo dispositivo</label>
+                <br><br>
+                <input type="submit" name="Accedi" value="Accedi" class="accedi"><br><br>
+                <input type="reset" name="Reset" value="Reset" class="reset">
+            </form>
+        </section>
+        <div class="altro">
+            <p>Se non hai ancora le credenziali, <a href="./Pagina login.html">registrati</a></p>
+            <br><br>
+            <p> Password dimenticata ? Clicca <a href="./Pagina login.html">qui.</a></p>
+        </div>
+    
+</body>
+</html>

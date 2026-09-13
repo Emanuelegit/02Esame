@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio CSS n°25</title>
+    <style>
+        body {
+            background-color: rgb(18, 56, 18);
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            font-weight: bolder;
+        }
+        fieldset {
+            width: fit-content;
+        }
+        div.blocchi {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 100px;
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+        fieldset {
+            border: none;
+        }
+        fieldset legend {
+            text-align: right;
+        }
+        div.pulsanti {
+            justify-content: center;
+            gap: 50px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        input[type=submit] {
+            border: 3px solid rgb(103, 91, 21);
+            border-radius: 8px;
+            font-weight: bold;
+            background-color: rgb(38, 81, 38);
+            padding: 10px 20px 10px 20px;
+        }
+        input[type=reset] {
+            border: 3px solid rgb(103, 91, 21);
+            border-radius: 8px;
+            font-weight: bold;
+            background-color: rgb(38, 81, 38);
+            padding: 10px 20px 10px 20px;
+        }
+        input[type=submit]:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+            border: solid 3px rgb(226, 211, 124);
+        }
+        input[type=reset]:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+            border: solid 3px rgb(226, 211, 124);
+        }
+        input[type=text], input[type=date], input[type=tel] {
+            border: none;
+            border-bottom: solid 3px rgb(91, 54, 26);
+            padding: 5px 10px 5px 10px;
+            background-color: rgb(18, 56, 18);
+
+        }
+        input {
+            color: white;
+        }
+        input:focus {
+            outline: none;
+        }
+        @media (max-width: 600px) {
+            div.blocchi {
+                flex-direction: column;
+            }
+            input[type=submit], input[type=reset]  {
+                display: block;
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Compila il form</h1>
+    <form action="http://www.example.com/subscribe.php" method="post">
+        <div class="blocchi">
+            <div class="sinistra">
+            <fieldset>
+                <legend>Dati anagrafici</legend>
+                <p>
+                    <label for="Nome">Nome :</label>
+                    <input type="text" id="Nome" name="Nome" required>
+                </p>
+                <p>
+                    <label for="Cognome">Cognome :</label>
+                    <input type="text" id="Cognome" name="Cognome" required>
+                </p>
+                <p>
+                    <label for="CF">CF :</label>
+                    <input type="text" id="CF" name="CF" maxlength="16" required minlength="16">
+                </p>
+                <p> 
+                    <label for="Genere">Genere : </label>
+                    <input type="radio" name="genere" value="Maschio" checked="checked" required/>Maschio
+                    <input type="radio" name="genere" value="Femmina" required/>Femmina
+                </p>
+                <p> 
+                    <label for="Data_di_nascita">Data di nascita :</label>
+                    <input type="date" id="Data_di_nascita" name="Data_di_nascita" required>
+                </p>
+                <p> 
+                    <label for="Luogo_di_nascita">Luogo di nascita :</label>
+                    <input type="text" id="Luogo_di_nascita" name="Luogo_di_nascita" required>
+                </p>    
+            </fieldset>
+            
+        </div>
+        <div class="destra">
+            <fieldset>
+                <legend>Residenza</legend>
+                <p> 
+                    <label for="(Via_Piazza_Civico)">(Via, Piazza, Civico) :</label>
+                    <input type="text" id="(Via_Piazza_Civico)" name="(Via_Piazza_Civico)" autocomplete="street-address" required><br><br>
+                    <label for="Città">Città :</label>
+                    <input type="text" id="Città" name="Città" autocomplete="address-level2" required><br><br>
+                    <label for="CAP">CAP :</label>
+                    <input type="text" id="CAP" name="CAP" autocomplete="postal-code" required>
+                </p>
+                <p> 
+                    <label for="cellulare">Recapito cellulare :</label>
+                    <input type="tel" id="cellulare" name="cellulare" required>
+                </p>
+            </fieldset> 
+        </div>
+        </div>
+        
+        <div class="pulsanti">
+            <input type="submit" name="submit" value="invia"/>
+            <input type="reset" name="reset" value="reset"/>
+        </div>
+        
+    </form>
+</body>
+</html>

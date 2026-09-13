@@ -1,0 +1,14 @@
+body {
+    width: 750px;
+    font-family: Arial, Verdana;
+    color: #111;
+}
+
+h1 {
+    background-color: #bbbbbb;
+    padding: 10px;
+}
+
+p {
+    width: 450px;
+}

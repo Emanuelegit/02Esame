@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio CSS n°27</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap : 15px;
+
+        }
+        nav {
+            background-color: rgb(87, 87, 174);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 50px;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        a:hover {
+            transform: scale(1.1);
+            transition: all 0.2s ease;
+        }
+        div.elementi_sinistra {
+            display: flex;
+            align-items: center;
+            gap: 100px;
+        }
+        div.elementi_destra {
+            display: flex;
+            align-items: center;
+            gap: 100px;
+        }
+        div.sinistra {
+            width: 25%;
+            text-align: center;
+            background-color: beige;
+        }
+        
+        div.destra {
+            width: 25%;
+            text-align: center;
+            background-color: beige;
+        }
+
+        div.centro {
+            width: 25%;
+            text-align: center;
+            overflow: hidden;
+            background-color: beige;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                flex-direction: column;
+            }
+            div.sinistra {
+                width: 100%;
+            }
+            div.destra {
+                width: 100%;
+            }
+            div.centro {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="elementi_sinistra">
+                <a href="Servizi.html">Servizi</a>
+                <a href="Contatti.html">Contatti</a>
+                <a href="Login.html">Login</a>
+            </div>
+            <img src="../Esercitazione 26/img/logo.png" width="120">
+            <div class="elementi_destra">
+                <a href="FAQ.html">FAQ</a>
+                <a href="Shop.html">Shop</a>
+                <a href="Aiuto.html">Aiuto</a>
+            </div>
+            
+        </nav>
+    </header>
+    <main>
+        <div class="sinistra">
+            <h2>Colonna sinistra</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="centro">
+            <h2>Colonna centrale</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="destra">
+            <h2>Colonna destra</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 Emanuele Ippoliti - tutti i diritti</p>
+    </footer>
+</body>
+</html>

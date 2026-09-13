@@ -1,0 +1,33 @@
+p {
+    color: rgb(0, 0, 0, 1);
+    background-color: rgb(162, 223, 218);
+    font-family: Pink_Beach;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: italic;
+    text-transform: capitalize;
+
+    border-style: solid;
+    border-color: #2347aa;
+    border-width: thick;
+    border-top-width: thin;
+    border-bottom-width: thick;
+    border-left-width: medium;
+    border-right-width: medium;
+
+    padding-top: 30px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-left: 60px;
+    
+
+    padding: 30px 40px 10px 60px;
+    margin-bottom: 150px;
+}
+
+#secondo {
+    background-color: crimson;
+    margin-top: 200px;
+
+
+}

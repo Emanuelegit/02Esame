@@ -1,0 +1,15 @@
+body {
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    background-color: rgb(56, 74, 55);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+}
+
+p {
+    background-color: violet; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

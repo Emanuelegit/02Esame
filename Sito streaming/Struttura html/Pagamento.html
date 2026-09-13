@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BISTREAM - Pagamento</title>
+</head>
+<body>
+    <header>
+        <img src="../Img/Logo sito streaming.png" alt="Logo_Bistream" width="120">
+        <h1>BISTREAM</h1>
+        <nav>
+            <ul>
+                <li><a href="./Homepage.html" >Homepage</a></li>
+                <li><a href="./Serietv.html" >Serietv</a></li>
+                <li><a href="./Film.html" >Film</a></li>
+                <li><a href="./Account.html" >Account</a></li>
+                <li><a href="./Coda.html" >Coda</a></li>
+                <li><a href="./Abbonamento.html">Abbonamento</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h3>INSERISCI I DATI NECESSARI</h3>
+        <form action="./Homepage.html" method="post">
+            <label>Nome : <input type="text" name="Nome_sulla_carta"  placeholder="Nome" required></label><br>
+            <label>Cognome : <input type="text" name="Cognome_sulla_carta"  placeholder="Cognome"></label><br>
+            <label>Numero carta : <input type="text" name="Numero_carta"  placeholder="0000 0000 0000 0000"  required></label><br>
+            <label>Data carta : <input type="text" name="Data_carta"  placeholder="MM/AA" pattern="(0[1-9]|1[0-2])\/[2-3][0-9]" maxlength="5"></label><br>
+            <label>CVV : <input type="text" name="CVV" placeholder="123" required></label><br>
+            <br><br>
+            <label><input type="submit" name="Acquista" value="Acquista" required></label>
+            <label><input type="reset" name="Reset" value="Reset" required></label>
+        </form>
+     </section>
+   
+     
+
+
+</body>
+</html>

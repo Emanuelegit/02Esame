@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio CSS n°10</title>
+    <style>
+       #box_testo {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        }
+        h1{
+            border: 2px;
+            width: fit-content;
+            color: brown;
+            border: 6px ridge;
+        }
+        ol {
+            list-style-position: outside;
+            list-style: lower-alpha;
+            background-color: rgb(40, 71, 40);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border: 10px solid rgb(76, 76, 28);
+            color: black;
+        }
+        div.elemento {
+            width: fit-content;
+            height: fit-content;
+            background-color: aquamarine;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box_testo">
+        <h1>Lista della spesa</h1>
+    </div>
+    
+    <ol>
+        <div class="elemento"><li>6 Uova</li></div>
+        <div class="elemento"><li>100g di Farina</li></div>
+        <div class="elemento"><li>2 buste di lievito</li></div>
+        <div class="elemento"><li>5 Pacchi di Farina</li></div>
+        <div class="elemento"><li>1 bottiglia di olio extra vergine</li></div>
+
+    </ol>
+</body>
+</html>
