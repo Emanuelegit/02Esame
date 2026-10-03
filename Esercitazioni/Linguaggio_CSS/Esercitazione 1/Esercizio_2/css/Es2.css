@@ -1,0 +1,14 @@
+h1 {
+    background-color: grey;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0px 10px 10px 0px;
+    border: 15px solid #225622;
+    text-align: center;
+}
+
+p {
+    background-color: aqua;
+    margin-top: 20px;
+    padding: 15px;
+    text-align: center;
+}

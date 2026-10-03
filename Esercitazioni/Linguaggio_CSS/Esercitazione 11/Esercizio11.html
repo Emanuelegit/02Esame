@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio CSS n°11</title>
+    <style>
+        
+        *{
+            box-sizing: border-box;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        } 
+        
+        div.contenitore1 ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(14, 31, 55);
+            padding: 10px 25px; 
+            gap: 100px;          
+            
+            margin: 0;
+            padding-left: 25px; 
+            padding-right: 25px;
+            list-style: none;
+        }
+
+        li img {
+            list-style: none;
+        }
+
+        a {
+            color: rgb(183, 195, 210);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+            
+        }
+        a:active {
+            color: purple;
+        }
+        a:hover {
+            color: #ffffff;
+        }
+
+        li.sinistra, li.destra {
+            list-style: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="contenitore1">
+            <nav>
+                <ul>
+                    <li class="sinistra"><a href="./Homepage.html">Homepage</a></li>
+                    <li class="sinistra"><a href="./Serie tv.html" >Serietv</a></li>
+                    <li class="sinistra"><a href="./Film.html">Film</a></li>
+                    <li><img src="../Esercitazione 11/img/Logo sito streaming.png" alt="Logo_Bistream" width="120"></li>
+                    <li class="destra"><a href="./Account.html">Account</a></li>
+                    <li class="destra"><a href="./Coda.html">Coda</a></li>
+                    <li class="destra"><a href="./Abbonamento.html">Abbonamento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</body>
+</html>

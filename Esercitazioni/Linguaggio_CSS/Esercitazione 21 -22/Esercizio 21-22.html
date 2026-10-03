@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio CSS n° 21-22</title>
+    <style>
+body {
+    background-color: rgb(156, 156, 230);
+    display: flex;
+    justify-content: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+section {
+    text-align: center;
+    border: 5px solid rgb(222, 210, 137);
+    width: fit-content;
+    border-radius: 10px;
+    padding: 20px 50px 20px 50px;
+    margin-top: 50px;
+}
+
+div.titolo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+h1 {
+    color: rgb(49, 49, 101);
+    border: none;
+    border-bottom: 3px solid rgb(49, 49, 101);
+    margin-top: auto;
+}
+
+p {
+    text-align: center;
+    color: rgb(49, 49, 101);
+    margin-top: auto;
+}
+
+div.campo {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    color: rgb(49, 49, 101);
+    opacity: 0.7;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+select {
+    border: none;
+    border-bottom: 3px solid rgb(222, 210, 137);
+    background-color: rgb(156, 156, 230);
+    outline: none;
+    color: rgb(49, 49, 101);
+    padding: 18px 10px 4px 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+textarea {
+    border: 3px solid rgb(222, 210, 137);
+    border-radius: 5px;
+    background-color: rgb(156, 156, 230);
+    outline: none;
+    color: rgb(49, 49, 101);
+    padding: 20px 10px 5px 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+select option {
+    background-color: rgb(156, 156, 230);
+}
+
+input:focus ~ label, 
+textarea:focus ~ label, 
+input:not(:placeholder-shown) ~ label, 
+textarea:not(:placeholder-shown) ~ label, 
+select:valid ~ label {
+    top: 2px;
+    left: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    color: rgb(222, 210, 137);
+    opacity: 1;
+}
+
+input[type=submit], input[type=reset] {
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(222, 210, 137);
+    font-weight: bold;
+    color: rgb(49, 49, 101);
+    width: 100px;
+    border: 2px solid transparent;
+    transition: transform 0.2s, border 0.2s;
+    padding: 5px;
+}
+
+input[type=submit]:hover, input[type=reset]:hover {
+    transform: scale(1.2);
+    border: 2px solid rgb(49, 49, 101);
+}
+
+div.pulsanti {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+    </style>
+</head>
+<body>
+    
+<section>
+    <div class="titolo">
+        <h1>Form di contatto</h1>
+    </div>
+    <p>Compila il modulo inserendo i dati richiesti</p>
+    <form action="../Esercitazione 19/Pagina login.html" method="post">
+        <div class="campo">
+            <input type="text" id="nome" name="nome" placeholder=" " required maxlength="25">
+            <label for="nome">Nome</label>
+        </div><br>
+        <div class="campo">
+            <input type="text" id="cognome" name="cognome" placeholder=" " required maxlength="25">
+            <label for="cognome">Cognome</label>
+        </div><br>
+        <div class="campo">
+            <input type="email" id="email" name="email" placeholder=" " required minlength="10" maxlength="40">
+            <label for="email">Email</label>
+        </div><br>
+        <div class="campo">
+            <input type="tel" id="telefono" name="telefono" placeholder=" " maxlength="10" required minlength="5" max="20">
+            <label for="telefono">Telefono</label>
+        </div><br>
+        <div class="campo">
+            <select id="argomento" required>
+                <option value="" disabled selected hidden></option>
+                <option value="preventivo">Preventivo</option>
+                <option value="collaborazione">Collaborazione</option>
+                <option value="altro">Altro</option>
+            </select>
+            <label for="argomento">Argomento</label>
+        </div><br>
+        <div class="campo">
+            <input type="text" id="oggetto" name="oggetto" placeholder=" " required minlength="4" maxlength="100">
+            <label for="oggetto">Oggetto</label>
+        </div><br>
+        <div class="campo">
+            <textarea id="note" placeholder=" " rows="5" minlength="10" maxlength="500"></textarea>
+            <label for="note">Note</label>
+        </div><br>
+        <div class="pulsanti">
+            <input type="submit" value="invia">
+            <input type="reset" value="reset">
+        </div>
+
+    </form>
+</section>
+
+</body>
+</html>

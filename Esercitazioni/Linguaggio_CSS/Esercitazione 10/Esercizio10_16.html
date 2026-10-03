@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio CSS n°10</title>
+    <style>
+        * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            border: outset 5px blue;
+        }
+        li.sottobox {
+            color: white;
+            list-style:lower-alpha;
+            list-style-position: inside;
+            border: 2px solid;
+            padding: 3px;
+            background-color: darkslategray;
+            width: fit-content;
+        }
+        li.elenco1 {
+            list-style-type: upper-latin;
+            border: 3px dashed black;
+            margin-bottom: 2px;
+            background-color: violet;
+            width: fit-content;
+        }
+        li.elenco2 {
+            list-style-type: decimal-leading-zero;
+            border: 3px dashed rgb(98, 21, 80);
+            margin-bottom: 2px;
+            background-color: rgb(20, 52, 69);
+            width: fit-content;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Lista della spesa</h1>
+    <ul> 
+        <li class="sottobox">latticini</li>
+        <ul >
+            <li class="elenco1">Latte</li>
+            <li class="elenco1">Formaggio</li>
+            <li class="elenco1">Galbanino</li>
+        </ul>
+        <li class="sottobox">Carne</li>
+        <ul >
+            <li class="elenco2">Bistecca</li>
+            <li class="elenco2">macinato</li>
+            <li class="elenco2">Fettine</li>
+        </ul>
+    </ul>
+</body>
+</html>

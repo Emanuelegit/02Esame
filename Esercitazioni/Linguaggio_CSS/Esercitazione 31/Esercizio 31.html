@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercitazione Web Design</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+            gap: 2px;
+            min-height: 100vh;
+        }
+
+        footer {
+            color: white;
+            background-color: rgb(87, 87, 174);
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        nav {
+            background-color: rgb(87, 87, 174);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            position: relative;
+            gap: 100px;
+            padding: 10px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        a:hover {
+            transform: scale(1.1);
+            transition: all 0.2s ease;
+        }
+
+        div.elementi_sinistra,
+        div.elementi_destra {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .dropdown_container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .menu_dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            min-width: 200px;
+            list-style: none;
+            padding: 10px 0;
+            border-radius: 4px;
+        }
+
+        .menu_dropdown li {
+            display: block;
+            padding: 5px 15px;
+        }
+
+        .menu_dropdown li a {
+            font-weight: normal;
+            font-size: 0.9rem;
+        }
+
+        .dropdown_container:hover .menu_dropdown {
+            display: block;
+        }
+
+        div.sinistra {
+            padding: 15px;
+            width: 75%;
+            text-align: center;
+            background-color: rgb(212, 212, 164);
+        }
+
+        div.destra {
+            padding: 15px;
+            width: 25%;
+            text-align: center;
+            background-color: rgb(212, 212, 164);
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+
+        fieldset legend {
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .titolo_elenco {
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        ul.elenco {
+            list-style: square;
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        ul.elenco a {
+            text-decoration: none;
+            color: rgb(71, 53, 29);
+            font-weight: normal;
+        }
+
+        @media (max-width: 1024px) {
+            div.sinistra {
+                width: 60%;
+            }
+            div.destra {
+                width: 40%;
+            }
+        }
+
+        @media (max-width: 800px) {
+            main {
+                flex-direction: column;
+            }
+            div.sinistra {
+                width: 100%;
+                order: 1;
+            }
+            div.destra {
+                width: 100%;
+                order: 2;
+            }
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            div.elementi_sinistra,
+            div.elementi_destra {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="elementi_sinistra">
+                <a href="Contatti.html">Contatti</a>
+                
+                <div class="dropdown_container">
+                    <a href="Servizi.html">Servizi ▾</a>
+                    <ul class="menu_dropdown">
+                        <li><a href="Consigli.html">Consigli</a></li>
+                        <li><a href="Esercizi_svolti.html">Esercizi svolti</a></li>
+                        <li><a href="Trucchi_del_mestiere.html">Trucchi del mestiere</a></li>
+                    </ul> 
+                </div>
+
+                <a href="Login.html">Login</a>
+            </div>
+
+            <img src="../Esercitazione 30/img/Logo1.png" width="120" alt="Logo dell'azienda">
+
+            <div class="elementi_destra">
+                <a href="FAQ.html">FAQ</a>
+                <a href="Shop.html">Shop</a>
+                <a href="Aiuto.html">Aiuto</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="sinistra">
+            <fieldset class="card_sinistra">
+                <legend>Card 1</legend>
+                <h1>Titolo 1</h1>
+                <h2>Sottotitolo 1</h2>
+                <img src="../Esercitazione 30/img/Logo.png" width="120" alt="logo">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </fieldset>
+
+            <fieldset class="card_sinistra">
+                <legend>Card 2</legend>
+                <h1>Titolo 2</h1>
+                <h2>Sottotitolo 2</h2>
+                <img src="../Esercitazione 30/img/Logo.png" width="120" alt="logo_2">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </fieldset>
+        </div>
+
+        <div class="destra">
+            <fieldset class="card_destra">
+                <legend>Profilo</legend>
+                <h1>Mi chiamo Tony Stark</h1>
+                <img src="../Esercitazione 30/img/Mia_immagine.webp" width="120" alt="Mia_immagine">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                
+                <p class="titolo_elenco">Post popolari:</p>
+                <ul class="elenco">
+                    <li><a href="Pagina_prova.html">Come imparare HTML e CSS in 10 giorni</a></li>
+                    <li><a href="Pagina_prova.html">I 5 errori più comuni con Flexbox</a></li>
+                    <li><a href="Pagina_prova.html">Guida pratica ai layout responsive</a></li>
+                </ul>
+
+                <p class="titolo_elenco">Seguimi sui social:</p>
+                <ul class="elenco">
+                    <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.tiktok.com" target="_blank">Tiktok</a></li>
+                </ul>
+            </fieldset>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Emanuele Ippoliti - tutti i diritti riservati</p>
+    </footer>
+</body>
+</html>

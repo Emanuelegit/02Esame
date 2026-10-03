@@ -1,0 +1,52 @@
+h1 {
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 6px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: fit-content;
+    padding: 5px;
+    
+}
+
+p {
+    text-align: center;
+    background-color: gray;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 4px solid;
+    width: fit-content;
+}
+
+div.contenitore {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+ol.elenco {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+li {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: 2px solid yellow;
+    border-radius: 10px;
+    gap: 15px;
+    width: fit-content;
+}
+
+a:visited {
+    
+    color: red;
+    
+}
+
+a:hover {
+    background-color: red;
+
+}
