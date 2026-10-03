@@ -1,0 +1,22 @@
+a:link {
+    color: brown;
+    text-decoration: none;
+    background-color: burlywood;
+}
+
+a:visited{
+    color: brown;
+    background-color: burlywood;
+}
+
+a:hover{
+    color: brown;
+    background-color: rgb(112, 93, 68);
+    
+}
+
+a:active{
+    color: brown;
+    background-color: rgb(217, 203, 185);
+    
+}

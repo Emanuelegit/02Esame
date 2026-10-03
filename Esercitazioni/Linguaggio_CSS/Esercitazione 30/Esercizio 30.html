@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio CSS n°30</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 0px;
+        }
+        main {
+            display: flex;
+            flex-direction: row;
+            gap : 2px;
+            min-height: 100vh;
+
+        }
+        footer {
+            color: white;
+            background-color: rgb(87, 87, 174);
+        }
+        nav {
+            background-color: rgb(87, 87, 174);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 50px;
+        }
+        nav div a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        a:hover {
+            transform: scale(1.1);
+            transition: all 0.2s ease;
+        }
+        ul.elenco a {
+            text-decoration: none;
+            color: white;
+            font-weight: normal;
+        }
+        ul.elenco {
+            list-style: square;
+            margin-top: 10px;
+        }
+        div.elementi_sinistra {
+            display: flex;
+            align-items: center;
+            gap: 100px;
+        }
+        div.elementi_destra {
+            display: flex;
+            align-items: center;
+            gap: 100px;
+        }
+        div.sinistra {
+            padding-top: 10px;
+            width: 75%;
+            text-align: center;
+            background-color: rgb(212, 212, 164);
+        }
+        
+        div.destra {
+            padding-top: 10px;
+            width: 25%;
+            text-align: center;
+            background-color: rgb(212, 212, 164);
+        }
+        fieldset legend {
+            text-align: left;
+        }
+
+        @media (max-width: 1024px) {
+            div.sinistra {
+                width: 60%;
+            }
+            div.destra {
+                width: 40%;
+            }
+        }
+        @media (max-width: 800px) {
+            main {
+                flex-direction: column;
+            }
+            div.sinistra {
+                width: 100%;
+            }
+            div.destra {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="elementi_sinistra">
+                <a href="Servizi.html">Servizi</a>
+                <a href="Contatti.html">Contatti</a>
+                <a href="Login.html">Login</a>
+            </div>
+            <img src="../Esercitazione 30/img/Logo1.png" width="120">
+            <div class="elementi_destra">
+                <a href="FAQ.html">FAQ</a>
+                <a href="Shop.html">Shop</a>
+                <a href="Aiuto.html">Aiuto</a>
+            </div>
+            
+        </nav>
+    </header>
+    <main>
+        <div class="sinistra">
+            <fieldset class="card_sinistra">
+                <legend>Card 1</legend>
+                <h1>Titolo 1</h1>
+                <h2>Sottoitolo 1</h2>
+                <img src="../Esercitazione 30/img/Logo.png" width="120" alt="logo">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </fieldset>
+            <fieldset class="card_sinistra">
+                <legend>Card 2</legend>
+                <h1>Titolo 2</h1>
+                <h2>Sottoitolo 2</h2>
+                <img src="../Esercitazione 30/img/Logo.png" width="120" alt="logo_2">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </fieldset>
+        </div>
+        <div class="destra">
+            <fieldset class="card_destra">
+                <legend>Card 1</legend>
+                <h1>Mi chiamo Tony Stark</h1>
+                <img src="../Esercitazione 30/img/Mia_immagine.webp" width="120" alt="Mia_immagine">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <ul class="elenco">Ecco un elenco dei post popolari
+                    <li><a href="Pagina_prova.html">Come imparare HTML e CSS in 10 giorni</a></li>
+                    <li><a href="Pagina_prova.html">I 5 errori più comuni con Flexbox</a></li>
+                    <li><a href="Pagina_prova.html">Guida pratica ai layout responsive</a></li>
+                </ul><br><br>
+                <ul class="elenco">Seguimi sui social
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://www.tiktok.com">Tiktok</a></li>
+                </ul>
+            </fieldset>
+            
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 Emanuele Ippoliti - tutti i diritti</p>
+    </footer>
+</body>
+</html>

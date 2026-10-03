@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio CSS n° 19</title>
+    <style>
+        section {
+            display: block;
+            width: fit-content;
+            background-color: rgb(79, 79, 211);
+            border: 10px solid rgb(79, 79, 211);
+            border-radius: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        div.titolo {
+            display: flex;
+            flex-wrap:wrap;
+            justify-content: flex-end;
+
+            
+        }
+        input[type=email], input[type=password], input[type=submit], input[type=reset] {
+            width: 100%;
+        }
+
+        input[type=email]:focus {
+            background-color: rgb(240, 222, 249);
+            color: black;
+        }
+        input[type=password]:focus {
+            background-color: rgb(86, 65, 96);
+        }
+        input[type=submit], input[type=reset]{
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            transform: scale(1.1);
+        }
+        input[type=reset]:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+        
+        <section> 
+            <div class="titolo">
+                <h1>ACCEDI QUI</h1>
+            </div>
+            <form action="./Pagina login.html" method="get">
+                
+                    <label><input type="email" name="email" placeholder="Email" required><br><br></label>
+                    <label><input type="password" name="password" placeholder="Password" required><br><br></label>
+                    <label><input type="checkbox" required>Ricordarmi su questo dispositivo</label>
+                <br><br>
+                <input type="submit" name="Accedi" value="Accedi" class="accedi"><br><br>
+                <input type="reset" name="Reset" value="Reset" class="reset">
+            </form>
+        </section>
+    
+</body>
+</html>

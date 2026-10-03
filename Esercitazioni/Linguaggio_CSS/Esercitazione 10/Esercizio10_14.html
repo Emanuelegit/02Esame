@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio CSS n°10</title>
+    <style>
+        * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h1 {
+            border: 9px double;
+            width: fit-content;
+        }
+        #box {
+            margin: 10px;
+            border: 20px dotted red;
+            list-style-type: square;
+            list-style-image: url(https://picsum.photos/id/10/20/20);
+        }
+        div.elemento {
+            border-radius: 10px;
+            border: 2px solid black;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Lista della spesa</h1>
+    <ol type="I" start="10" id="box">
+        <div class="elemento"><li>6 Uova</li></div>
+        <div class="elemento"><li>100g di Farina</li></div>
+        <div class="elemento"><li>2 buste di lievito</li></div>
+        <div class="elemento"><li>5 Pacchi di Farina</li></div>
+        <div class="elemento"><li>1 bottiglia di olio extra vergine</li></div>
+
+    </ol>
+</body>
+</html>

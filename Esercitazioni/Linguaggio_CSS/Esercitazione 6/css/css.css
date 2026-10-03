@@ -1,0 +1,26 @@
+div.contenitore{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+}
+
+div.contenitore > div {
+    height: 150px;
+    border: 2px solid #333;
+    padding: 15px;
+    background-color: #f0f0f0;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIkBLxFiB_D1vKkdC3HRR1vhOHRBxn6SsgD1QQFJHWIw&s=10');
+}
+
+div.box_x {
+    background-repeat: repeat-x;
+}
+
+div.box_y {
+    background-repeat: repeat-y;
+}
+
+div.no_box {
+    background-repeat: no-repeat;
+}
