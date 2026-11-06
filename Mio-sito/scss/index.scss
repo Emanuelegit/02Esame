@@ -1,0 +1,97 @@
+@use "variabili-funzioni" as *;
+@use "elementi-comuni" as *;
+
+div.immagine {
+    width: 100%;
+    overflow: hidden;
+    background-color: $sfondo; 
+    img {
+        width: 100%;
+        height: 260px;          
+        object-fit: contain;     
+        object-position: center; 
+        display: block;
+    }
+}
+div.prima-parte {
+    background-color: $sfondo;
+
+    >div.testo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 100px;
+        text-align: center;
+        
+        >h1 {
+            color: $colore-link;
+        }
+
+        >p {
+            color: white;
+            width: 40%;
+            
+            
+            @media(max-width: 768px) {
+                width: 90%;
+            }
+        }
+
+        
+        @media(max-width: 768px) {
+            padding-top: 40px;
+        }
+    }
+
+    >div.bottone {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+            
+        >form {
+            @include Imposta-bottoni();
+        }
+    }
+}
+
+// impostazioni generali homepage
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $sfondo;
+
+    >div.titolo {
+        padding-bottom: 10px;
+
+        >h2 {
+            color: $colore-link;
+            border-bottom: 3px solid $colore-link;
+            width: fit-content;
+        }
+    }
+    
+    >div.collaborazioni {
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        @media(max-width: 768px) {
+            width: 90%;
+            text-align: center;
+
+            >h2 {
+                text-align: center;
+            }
+        }
+    }
+
+    >div.bottone {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        >form {
+            @include Imposta-bottoni();
+        }
+    }
+}

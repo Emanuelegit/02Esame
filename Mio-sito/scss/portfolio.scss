@@ -1,0 +1,121 @@
+@use "variabili-funzioni" as *;
+@use "elementi-comuni" as *;
+
+body {
+    background-color: $sfondo;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .card-progetto {
+    background-color: lighten($sfondo, 2%);
+    border: 1px solid rgba($colore-link, 0.2);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+
+    
+    h2 {
+      color: $colore-link;
+      font-size: 1.3rem;
+      border: 2px solid $colore-link;
+      padding: 12px 20px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 0;
+      margin-bottom: 20px;
+      background-color: rgba($colore-link, 0.05);
+      letter-spacing: 0.5px;
+    }
+
+    
+    .form-macroarea {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      flex-wrap: wrap;
+
+      
+      .select-lavoro {
+        flex: 1;
+        min-width: 280px;
+        background-color: lighten($sfondo, 5%);
+        color: white;
+        border: 1px solid rgba($colore-link, 0.3);
+        padding: 12px 15px;
+        border-radius: 6px;
+        font-family: $font-sito;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: $colore-link;
+        }
+
+        option {
+          background-color: $sfondo;
+          color: white;
+        }
+      }
+
+      
+      input[type="submit"] {
+        background-color: transparent;
+        color: $colore-link;
+        border: 2px solid $colore-link;
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-family: $font-sito;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: $colore-link;
+          color: $sfondo;
+        }
+      }
+    }
+
+    
+    @media(max-width: 768px) {
+      padding: 20px 15px;
+
+      h2 {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+      }
+
+      .form-macroarea {
+        flex-direction: column;
+        align-items: stretch;
+
+        .select-lavoro {
+          min-width: 100%;
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  
+  @media(max-width: 768px) {
+    padding: 20px 10px;
+  }
+}

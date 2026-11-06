@@ -1,0 +1,67 @@
+[ 
+    
+    { 
+        "index" : "Homepage",
+        "chi-sono" : "Chi sono",
+        "servizi" : "Servizi",
+        "Portfolio" : "Portfolio",
+        "contatti" : "Contatti"
+
+    },
+
+    {
+        "servizio1": {
+            "titolo": "Sviluppo Web Full Stack",
+            "descrizione": "Progettazione e realizzazione di web app su misura, curando sia l'architettura backend che l'interfaccia utente nei minimi dettagli."
+        },
+        "servizio2": {
+            "titolo": "Architettura & Backend Engineering",
+            "descrizione": "Sviluppo di logiche server-side solide e scalabili, gestione avanzata dei database e creazione di API RESTful sicure."
+        },
+        "servizio3": {
+            "titolo": "Frontend & User Experience (UI/UX)",
+            "descrizione": "Interfacce utente moderne, responsive e performanti, progettate per offrire un'esperienza fluida su qualsiasi dispositivo."
+        },
+        "servizio4": {
+            "titolo": "Manutenzione, Sicurezza & Consulenza",
+            "descrizione": "Analisi del codice, implementazione delle best practice di sicurezza, aggiornamenti evolutivi e consulenza tecnica mirata."
+        }
+    },
+
+    {
+        "portfolio": [
+            {
+                "macroarea": "E-commerce & Soluzioni di Vendita",
+                "lavori": [
+                    "Shop Online Abbigliamento",
+                    "Marketplace Prodotti Locali",
+                    "E-commerce B2B"
+                ]
+            },
+            {
+                "macroarea": "Gestionali & Software B2B",
+                "lavori": [
+                    "Dashboard Gestione Magazzino",
+                    "CRM per Agenzia Immobiliare",
+                    "Portale Dipendenti & Presenze"
+                ]
+            },
+            {
+                "macroarea": "Siti Corporate & Portfolio Istituzionali",
+                "lavori": [
+                    "Sito Web Studio Legale",
+                    "Landing Page Evento Aziendale",
+                    "Portfolio Fotografo Professionista"
+                ]
+            },
+            {
+                "macroarea": "Servizi Web su Misura & Automazioni",
+                "lavori": [
+                    "Sistema di Prenotazione Online",
+                    "Integrazione API di Pagamento",
+                    "Tool di Analisi e Reportistica"
+                ]
+            }
+        ]
+    }
+]

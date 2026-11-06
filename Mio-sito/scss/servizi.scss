@@ -1,0 +1,78 @@
+@use "variabili-funzioni" as *;
+@use "elementi-comuni" as *;
+
+body {
+    background-color: $sfondo;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  > div:not(.contatto) {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: lighten($sfondo, 3%);
+    border: 1px solid rgba($colore-link, 0.2);
+    border-radius: 8px;
+    padding: 25px 30px;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      border-color: rgba($colore-link, 0.5);
+    }
+
+   
+    h2 {
+      color: $colore-link;
+      font-size: 1.2rem;
+      border: 2px solid $colore-link;
+      padding: 15px 20px;
+      border-radius: 4px;
+      min-width: 220px;
+      text-align: center;
+      margin: 0;
+      flex-shrink: 0;
+      background-color: rgba($colore-link, 0.05);
+      letter-spacing: 0.5px;
+    }
+
+    
+    p {
+      color: white;
+      font-size: 0.95rem;
+      margin: 0;
+      text-align: justify;
+      line-height: 1.6;
+    }
+
+    
+    @media(max-width: 768px) {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 20px 15px;
+      gap: 15px;
+
+      h2 {
+        min-width: 100%;
+        box-sizing: border-box;
+      }
+
+      p {
+        text-align: left; 
+      }
+    }
+  }
+
+  
+  @media(max-width: 768px) {
+    padding: 20px 10px;
+  }
+}

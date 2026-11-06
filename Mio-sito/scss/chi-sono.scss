@@ -1,0 +1,108 @@
+@use "variabili-funzioni" as *;
+@use "elementi-comuni" as *;
+
+body {
+    background-color: $sfondo;
+    
+    @media(max-width: 768px) {
+        width: 100% !important;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.prima-parte {
+    display: flex;             
+    align-items: center;       
+    gap: 30px;                 
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba($colore-link, 0.2);
+
+    img {
+        width: 170px;            
+        height: 200px;           
+        border-radius: 6px;      
+        border: 2px solid $colore-link;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        flex-shrink: 0;          
+    }
+
+    
+    .testo-chi-sono {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        color: $colore-link;
+        font-size: 2rem;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 0.95rem;
+        color: white;
+        margin: 0;
+        text-align: justify;
+    }
+
+    
+    @media(max-width: 768px) {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 15px;
+
+        img {
+            margin-bottom: 15px;
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+}
+
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px;
+
+    .professioni {
+        background-color: lighten($sfondo, 3%);
+        border-left: 4px solid $colore-link;
+        padding: 25px 30px;
+        border-radius: 4px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+
+        h2 {
+            color: $colore-link;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: white;
+            font-size: 0.95rem;
+            text-align: justify;
+            margin: 0;
+        }
+    }
+
+    // Media query mobile per la sezione delle professioni
+    @media(max-width: 768px) {
+        padding: 20px 15px;
+
+        .professioni {
+            padding: 20px;
+
+            p {
+                text-align: left;
+            }
+        }
+    }
+}

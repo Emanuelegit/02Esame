@@ -1,0 +1,249 @@
+$font-sito : Verdana;
+$colore-link : rgb(222 187 105);
+$sfondo : rgb(13 13 13);
+
+//impostazioni bottoni
+@mixin Imposta-bottoni() {
+    input[type=submit],
+    input[type=reset],
+    button {
+        font-family: $font-sito;
+        padding: 10px;
+        border-radius: 8px;
+        border-color: $colore-link;
+        color: $colore-link;
+        background-color: $sfondo;
+        margin-bottom: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+//impostazioni form contatti
+
+@mixin ImpostaContatti() {
+    .testo-contatti {
+        flex: 1;
+        max-width: 380px;
+
+        h2 {
+            color: rgb(222 187 105);
+            font-family: $font-sito;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: white;
+            font-family: $font-sito;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+    }
+
+    // form contatto
+    .form-contatti {
+        flex: 1.5;
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+
+            label {
+                color: white;
+                font-family: $font-sito;
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                font-size: 0.95rem;
+
+                input[type=text],
+                input[type=email],
+                input[type=tel],
+                select {
+                    background-color: rgb(13 13 13);
+                    border: 1px solid rgb(222 187 105);
+                    border-radius: 8px;
+                    color: white;
+                    padding: 12px 14px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    font-family: $font-sito;
+
+                    &::placeholder {
+                        color: rgb(222 187 105);
+                        opacity: 0.8;
+                    }
+
+                    &:focus {
+                        outline: none;
+                        border-color: white;
+                    }
+                }
+
+                select {
+                    cursor: pointer;
+                    
+                    option {
+                        background-color: rgb(13 13 13);
+                        color: white;
+                    }
+                }
+
+                a {
+                    color: rgb(222 187 105);
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            textarea {
+                background-color: rgb(13 13 13);
+                border: 1px solid rgb(222 187 105);
+                border-radius: 8px;
+                color: white;
+                padding: 12px 14px;
+                width: 100%;
+                box-sizing: border-box;
+                font-family: $font-sito;
+                resize: vertical;
+                min-height: 130px;
+
+                &::placeholder {
+                    color: rgb(222 187 105);
+                    opacity: 0.8;
+                }
+
+                &:focus {
+                    outline: none;
+                    border-color: white;
+                }
+            }
+
+            label:has(textarea) {
+                grid-column: 1 / -1;
+            }
+
+            input[type="checkbox"] {
+                accent-color: rgb(222 187 105);
+                width: 18px;
+                height: 18px;
+                cursor: pointer;
+            }
+
+            label:has(input[name="Spunta"]) {
+                grid-column: 1 / -1;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+            }
+
+            .bottone {
+                grid-column: 1 / -1;
+                display: flex;
+                gap: 15px;
+                margin-top: 10px;
+
+                @include Imposta-bottoni();
+            }
+
+            @media (max-width: 768px) {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+
+    
+    @media(max-width : 768px) {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+
+        
+        .testo-contatti {
+            max-width: 100%;
+            
+            h2 {
+                font-size: 2rem;
+                text-align: center; 
+            }
+        }
+    }
+}
+
+//impostazioni nav
+
+@mixin ImpostaNav() {
+    >nav {
+        
+        >ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $sfondo;
+            padding: 0;
+            margin-top: 0;
+            list-style: none;
+            gap: 40px;
+            margin-bottom: 0;
+
+            >li a {
+                text-decoration: none;
+                color: $colore-link;
+                font-weight: bold;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            @media(max-width : 768px ) {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 0;
+            }
+            
+        }
+
+        
+    }
+}
+
+//impostazioni footer
+
+@mixin ImpostaFooter() {
+    background-color: rgb(53, 51, 51);
+    font-family: $font-sito;
+    text-align: center;
+    border-top: none !important;
+    border-bottom: none !important;
+    margin: 0;
+    padding: 30px 20px;
+
+    > p {
+        color: white;
+        margin: 0;
+
+        a {
+            text-decoration: none;
+            color: $colore-link;
+            font-weight: bold;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

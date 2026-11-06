@@ -1,0 +1,30 @@
+@use "variabili-funzioni" as *;
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: $font-sito;
+}
+
+//menu navigazione
+header {
+    @include ImpostaNav();
+}
+
+//form contatti
+.contatto {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 60px 40px;
+
+    @include ImpostaContatti();
+
+}
+
+//footer
+footer {
+    @include ImpostaFooter();
+}
+    
