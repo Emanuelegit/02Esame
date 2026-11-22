@@ -9,6 +9,14 @@ html, body {
 //menu navigazione
 header {
     @include ImpostaNav();
+    
+    .hamburger {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        @include BurgerMenu();
+    }
 }
 
 //form contatti
@@ -27,4 +35,45 @@ header {
 footer {
     @include ImpostaFooter();
 }
-    
+
+//Cookie & Privacy Policy
+body {
+    background-color: $sfondo;
+    font-family: $font-sito, sans-serif;
+    color: white;
+    margin: 0;
+}
+
+.policy {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+
+    h1 {
+        color: $colore-link;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    p {
+        line-height: 1.7;
+        margin-bottom: 16px;
+        font-size: 0.95rem;
+    }
+
+    ul {
+        margin: 0 0 20px 20px;
+        line-height: 1.7;
+        font-size: 0.95rem;
+
+        li {
+            margin-bottom: 8px;
+        }
+    }
+
+    a {
+        color: $colore-link;
+        text-decoration: underline;
+    }
+}
+ 

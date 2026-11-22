@@ -1,10 +1,76 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+require_once './funzioni_php/layout.php';
+require_once './funzioni_php/form-contatti.php';
 
 $file = file_get_contents('mio-sito.json');
 $dati = json_decode($file, true);
 
-?>
+$id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
+$lavoroTrovato = null;
 
+foreach ($dati[2]['portfolio'] ?? [] as $macroarea) {
+    foreach ($macroarea['lavori'] ?? [] as $lavoro) {
+        if ((int) $lavoro['id'] === $id) {
+            $lavoroTrovato = $lavoro;
+            break 2;
+        }
+    }
+}
+
+$form = new Contatti();
+$daRipopolare = [];
+$errore = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $valori = [
+        'nome'      => trim($_POST['nome'] ?? ''),
+        'cognome'   => trim($_POST['cognome'] ?? ''),
+        'email'     => trim($_POST['email'] ?? ''),
+        'telefono'  => trim($_POST['telefono'] ?? ''),
+        'oggetto'   => trim($_POST['oggetto'] ?? ''),
+        'servizio'  => trim($_POST['servizio'] ?? ''),
+        'messaggio' => trim($_POST['messaggio'] ?? '')
+    ];
+
+    $privacyAccettata = isset($_POST['Spunta']);
+    $controllo_telefono = preg_replace('/[\s\-\.]/', '', $valori['telefono']);
+
+    if (
+        empty($valori['nome']) ||
+        empty($valori['cognome']) ||
+        empty($valori['email']) ||
+        empty($valori['telefono']) ||
+        empty($valori['servizio']) ||
+        empty($valori['messaggio']) ||
+        !$privacyAccettata
+    ) {
+        $errore = "Errore: compila tutti i campi obbligatori e accetta la Privacy Policy!";
+        $daRipopolare = $valori;
+    } elseif (!filter_var($valori['email'], FILTER_VALIDATE_EMAIL)) {
+        $errore = "Errore: l'indirizzo email non è valido!";
+        $daRipopolare = $valori;
+    } elseif (!preg_match('/^\+?[0-9]{6,15}$/', $controllo_telefono)) {
+        $errore = "Errore: il numero di telefono non è valido!";
+        $daRipopolare = $valori;
+    } else {
+        $riga_dati = "Nome : {$valori['nome']} | Cognome : {$valori['cognome']} | Email : {$valori['email']} | Telefono : {$valori['telefono']} | Oggetto : {$valori['oggetto']} | Servizio : {$valori['servizio']} | Messaggio : {$valori['messaggio']}" . PHP_EOL;
+
+        file_put_contents('dati-form.txt', $riga_dati, FILE_APPEND);
+
+        $_SESSION['flash_successo'] = "Richiesta inviata con successo!";
+        $redirectUrl = strtok($_SERVER['REQUEST_URI'], '?') . ($id > 0 ? '?id=' . $id : '') . '#contatti';
+        header('Location: ' . $redirectUrl);
+        exit;
+    }
+}
+
+$messaggioSuccesso = $_SESSION['flash_successo'] ?? '';
+unset($_SESSION['flash_successo']);
+?>
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -16,47 +82,27 @@ $dati = json_decode($file, true);
 </head>
 <body>
     <header>
-        <?php    
-            $paginaCorrente = basename($_SERVER['PHP_SELF']); 
-        ?>
-        <nav>
-            <ul>
-                <li><img src="./img/logo.jpg" width="150"></li>
-                <?php foreach ($dati[0] as $chiave => $valore) : ?>
-                    <?php 
-                            
-                        if ($valore === 'Contatti') {
-                                
-                            $url = ($paginaCorrente === 'index.php') ? '#contatti' : 'index.php#contatti';
-                    } else {
-                                
-                            $url = $chiave . '.php';
-                        }
-                    ?>
-                    <li><a href="<?= $url ?>" title="<?= $valore ?>"><?= $valore ?></a></li>
-                <?php endforeach; ?>
-            </ul>
-        </nav>
+        <?php menuNav(); ?>
     </header>
 
     <main>
-        <fieldset>
-            <h1>Bi-stream</h1>
-            <ul>
-                <li>Data: 19/09/2020</li>
-                <li>Per : Netflix</li>
-                <li>Sito streaming per la visione di serie tv e film in alta qualità con prezzi accessibili a tutti</li>
-            </ul>
-        </fieldset>
-        <fieldset>
-            <img src="./img/Logo-lavoro.jpg" width="120">
-            <input type="button" value="Vai al sito">
-        </fieldset>
-        <div class="bottone">
-            <form action="./Index.php">
-                <input type="submit" value="Torna alla home">
-            </form>
-        </div>
+        <?php if ($lavoroTrovato !== null): ?>
+            <fieldset>
+                <h1><?= htmlspecialchars($lavoroTrovato['titolo']); ?></h1>
+                <ul>
+                    <li><?= htmlspecialchars($lavoroTrovato['descrizione']); ?></li>
+                    <li><?= htmlspecialchars($lavoroTrovato['tecnologie']); ?></li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <img src="./img/Logo-lavoro.jpg" alt="Logo del progetto" width="120">
+                <input type="button" value="Vai al sito">
+            </fieldset>
+        <?php else: ?>
+            <p>Lavoro non trovato.</p>
+            <a href="portfolio.php">Torna al portfolio</a>
+        <?php endif; ?>
+
         <div class="contatto">
             <div id="contatti" class="testo-contatti">
                 <h2>Contattami</h2>
@@ -64,52 +110,40 @@ $dati = json_decode($file, true);
             </div>
 
             <div class="form-contatti">
-                <form action="" method="post">
-                <!--Genero gli input richiamando la classe Contatti e faccio un controllo su di essi, in caso positivo salviamo tutto dentro dati-form.txt--> 
-                    <?php 
-                        include_once 'funzioni php/form-contatti.php';
+                <form action="" method="post" class="form-contatto" novalidate>
+                    <?php if ($errore !== ''): ?>
+                        <p style="color:red;"><?= htmlspecialchars($errore) ?></p>
+                    <?php endif; ?>
 
-                        $form = new Contatti();
-                        
-                        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                            
-                            $nome = trim($_POST['nome'] ?? '');
-                            $cognome = trim($_POST['cognome'] ?? '');
-                            $email = trim($_POST['email'] ?? '');
-                            $servizio = trim($_POST['servizio'] ?? '');
-                            $messaggio = trim($_POST['messaggio'] ?? '');
-                            $telefono = trim($_POST['telefono'] ?? '');
+                    <?php if ($messaggioSuccesso !== ''): ?>
+                        <p style="color:green;"><?= htmlspecialchars($messaggioSuccesso) ?></p>
+                    <?php endif; ?>
 
-                            
-                            if (empty($nome) || empty($email) || empty($cognome) || empty($servizio) || empty($messaggio)) {
-                                echo "<p style='color:red;'>Errore: compila tutti i campi obbligatori!</p>";
-                            } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                                echo "<p style='color:red;'>Errore: l'indirizzo email non è valido!</p>";
-                            } else {
-                                
-                                $riga_dati = "Nome : $nome | Cognome : $cognome | Email : $email | Servizio : $servizio | Telefono : $telefono | Messaggio : $messaggio". PHP_EOL;
-
-                                file_put_contents('dati-form.txt', $riga_dati, FILE_APPEND);
-
-                                echo "<p style='color:green;'>Richiesta inviata con successo!</p>";
-                                
-                            }
-                        }
-
-                        
-                        $form->generaInput(); 
+                    <?php
+                    $form->generaInput($daRipopolare);
+                    $servizioSelezionato = $daRipopolare['servizio'] ?? '';
                     ?>
+
                     <label>Servizio:
                         <select name="servizio" id="servizio">
-                            <option value="" disabled selected>Seleziona un servizio...</option>
-                            <option value="web">Sviluppo Web</option>
-                            <option value="grafica">Grafica & UI</option>
-                            <option value="altro">Altro</option>
+                            <option value="" disabled <?= $servizioSelezionato === '' ? 'selected' : '' ?>>Seleziona un servizio...</option>
+                            <option value="web" <?= $servizioSelezionato === 'web' ? 'selected' : '' ?>>Sviluppo Web</option>
+                            <option value="grafica" <?= $servizioSelezionato === 'grafica' ? 'selected' : '' ?>>Grafica & UI</option>
+                            <option value="altro" <?= $servizioSelezionato === 'altro' ? 'selected' : '' ?>>Altro</option>
                         </select>
                     </label>
-                    <label>Ho letto e accetto la <a href="Privacy-policy.php" title="Pagina Privacy Policy">Privacy Policy</a><input type="checkbox" name="Spunta"></label>
-                    <label>Messaggio : <textarea rows="10" cols="40" placeholder="Descrivi la tua richiesta di ricontatto" name="messaggio" maxlength="1000">
-                    </textarea><span id="contatore">0/1000</span></label>
+
+                    <label>
+                        Ho letto e accetto la <a href="Privacy-policy.php" title="Pagina Privacy Policy">Privacy Policy</a>
+                        <input type="checkbox" name="Spunta" <?= isset($_POST['Spunta']) && !empty($daRipopolare) ? 'checked' : '' ?>>
+                    </label>
+
+                    <label>
+                        Messaggio :
+                        <textarea id="messaggio" rows="10" cols="40" placeholder="Descrivi la tua richiesta di ricontatto" name="messaggio" maxlength="1000"><?= htmlspecialchars($daRipopolare['messaggio'] ?? '') ?></textarea>
+                        <span id="contatore">0/1000</span>
+                    </label>
+
                     <script src="./javascript/form.js"></script>
 
                     <div class="bottone">
@@ -117,12 +151,12 @@ $dati = json_decode($file, true);
                         <input type="reset" value="Reset">
                     </div>
                 </form>
-            </div>    
+            </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 Emanuele Ippoliti - Tutti i diritti riservati - Leggi anche la <a href="Cookie-policy.php" title="Pagina Cookie Policy">Cookie Policy</a></p>
+        <?php footer(); ?>
     </footer>
 </body>
 </html>

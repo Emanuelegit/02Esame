@@ -31,35 +31,99 @@
     {
         "portfolio": [
             {
+                "id": 1,
                 "macroarea": "E-commerce & Soluzioni di Vendita",
                 "lavori": [
-                    "Shop Online Abbigliamento",
-                    "Marketplace Prodotti Locali",
-                    "E-commerce B2B"
+                    {
+                        "id": 101,
+                        "titolo": "Shop Online Abbigliamento",
+                        "descrizione": "Negozio online con catalogo per taglie e colori, carrello e gestione ordini.",
+                        "tecnologie": "HTML, CSS, PHP, MySQL"
+                    },
+                    {
+                        "id": 102,
+                        "titolo": "Marketplace Prodotti Locali",
+                        "descrizione": "Piattaforma per produttori locali con schede prodotto e ricerca per categoria.",
+                        "tecnologie": "HTML, CSS, JavaScript, PHP"
+                    },
+                    {
+                        "id": 103,
+                        "titolo": "E-commerce B2B",
+                        "descrizione": "Portale dedicato alle forniture aziendali con listini e richieste d'ordine.",
+                        "tecnologie": "PHP, MySQL, JavaScript"
+                    }
                 ]
             },
             {
+                "id": 2,
                 "macroarea": "Gestionali & Software B2B",
                 "lavori": [
-                    "Dashboard Gestione Magazzino",
-                    "CRM per Agenzia Immobiliare",
-                    "Portale Dipendenti & Presenze"
+                    {
+                        "id": 201,
+                        "titolo": "Dashboard Gestione Magazzino",
+                        "descrizione": "Panoramica di carichi, scarichi e scorte minime con tabelle filtrabili.",
+                        "tecnologie": "PHP, MySQL, CSS"
+                    },
+                    {
+                        "id": 202,
+                        "titolo": "CRM per Agenzia Immobiliare",
+                        "descrizione": "Gestione immobili, clienti e appuntamenti in un unico pannello operativo.",
+                        "tecnologie": "PHP, MySQL, JavaScript"
+                    },
+                    {
+                        "id": 203,
+                        "titolo": "Portale Dipendenti & Presenze",
+                        "descrizione": "Area riservata per turni, comunicazioni interne e riepilogo presenze.",
+                        "tecnologie": "HTML, CSS, PHP, MySQL"
+                    }
                 ]
             },
             {
+                "id": 3,
                 "macroarea": "Siti Corporate & Portfolio Istituzionali",
                 "lavori": [
-                    "Sito Web Studio Legale",
-                    "Landing Page Evento Aziendale",
-                    "Portfolio Fotografo Professionista"
+                    {
+                        "id": 301,
+                        "titolo": "Sito Web Studio Legale",
+                        "descrizione": "Sito istituzionale chiaro e sobrio con aree di competenza e modulo contatti.",
+                        "tecnologie": "HTML, CSS, PHP"
+                    },
+                    {
+                        "id": 302,
+                        "titolo": "Landing Page Evento Aziendale",
+                        "descrizione": "Pagina promozionale per evento con programma, relatori e form di iscrizione.",
+                        "tecnologie": "HTML, CSS, JavaScript"
+                    },
+                    {
+                        "id": 303,
+                        "titolo": "Portfolio Fotografo Professionista",
+                        "descrizione": "Galleria fotografica organizzata per serie con pagine di approfondimento.",
+                        "tecnologie": "HTML, CSS, JavaScript, PHP"
+                    }
                 ]
             },
             {
+                "id": 4,
                 "macroarea": "Servizi Web su Misura & Automazioni",
                 "lavori": [
-                    "Sistema di Prenotazione Online",
-                    "Integrazione API di Pagamento",
-                    "Tool di Analisi e Reportistica"
+                    {
+                        "id": 401,
+                        "titolo": "Sistema di Prenotazione Online",
+                        "descrizione": "Gestione fasce orarie e richieste di prenotazione con conferma a schermo.",
+                        "tecnologie": "PHP, JavaScript, MySQL"
+                    },
+                    {
+                        "id": 402,
+                        "titolo": "Integrazione API di Pagamento",
+                        "descrizione": "Collegamento a servizi di pagamento esterni con gestione esiti e log.",
+                        "tecnologie": "PHP, JSON, API REST"
+                    },
+                    {
+                        "id": 403,
+                        "titolo": "Tool di Analisi e Reportistica",
+                        "descrizione": "Elaborazione dati e riepiloghi pronti per la consultazione rapida.",
+                        "tecnologie": "PHP, JavaScript, CSS"
+                    }
                 ]
             }
         ]

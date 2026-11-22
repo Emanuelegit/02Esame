@@ -8,11 +8,11 @@ class Contatti {
         'oggetto'   => 'text'
     ];
 
-    
-    public function generaInput() {
+    public function generaInput(array $valori = []) {
         foreach ($this->campi as $nome => $tipo) {
+            $valore = htmlspecialchars($valori[$nome] ?? '');
             echo '<label>' . ucfirst($nome) . ': 
-                    <input type="' . $tipo . '" name="' . $nome . '" id="' . $nome . '">
+                    <input type="' . $tipo . '" name="' . $nome . '" id="' . $nome . '" value="' . $valore . '">
                   </label>';
         }
     }

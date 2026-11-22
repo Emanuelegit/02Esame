@@ -30,7 +30,7 @@ main {
     }
 
    
-    h2 {
+    >h1 {
       color: $colore-link;
       font-size: 1.2rem;
       border: 2px solid $colore-link;
@@ -60,7 +60,7 @@ main {
       padding: 20px 15px;
       gap: 15px;
 
-      h2 {
+      h1 {
         min-width: 100%;
         box-sizing: border-box;
       }
